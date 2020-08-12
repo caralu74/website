@@ -3,7 +3,7 @@ FreeDict.org
 
 Este es el código fuente del sitio web <https://freedict.org>.
 Si encuentra errores por favor ...
-[diganos](https://freedict.org/community) o envienos una petición o un parche.
+[díganos](https://freedict.org/community) o envíenos una petición o un parche.
 
 Estamos buscando traductores. No es demasiado trabajo y el sitio web no
 cambia con mucha frecuencia. Si puede traducirlo a algún otro idioma diferente a los listados al final de 
@@ -25,16 +25,16 @@ y las actualizaciones son menores. Hay dos maneras de abordar esto:
     Si no puede proceder, siéntase libre de enviarnos un [E-mail]
     (https://www.freelists.org/list/freedict) y arreglaremos
     las cosas  para UD. 
-2.  Si no está familiarizado con Gettext, por favor contactenos a nuestra 
+2.  Si no está familiarizado con Gettext, por favor contáctenos a nuestra 
     [lista de correo](https://www.freelists.org/list/freedict) y agregaremos 
-    el idiioma para UD. A continuación recivira un fichero ".po".
+    el idioma para UD. A continuación recibirá un fichero ".po".
 
-    Abra el fichero `.po` en un editor de texto. El primer parrafo puede ser ignorado.
-    Los parrafos siguientes son los textos que deben ser traducidos. La
-    primera linea siemre empieza con un "hash" `#`, por favor ignore está linea y
+    Abra el fichero `.po` en un editor de texto. El primer párrafo puede ser ignorado.
+    Los párrafos siguientes son los textos que deben ser traducidos. La
+    primera linea siempre empieza con un "hash" `#`, por favor ignore está línea y
     no la modifique. La siguiente linea tiene un `msgid` con el texto en
     comillas. Este es el texto en Inglés que sirve de base para la traducción.
-    Debajo hay una línea con un `msgstr` y comillas vacias. Coloque la traducción 
+    Debajo hay una línea con un `msgstr` y comillas vacías. Coloque la traducción 
     entre las comillas.
 
     Si ve un texto más largo, como el siguiente:
@@ -46,13 +46,13 @@ y las actualizaciones son menores. Hay dos maneras de abordar esto:
     ```
 
     Su traducción debe ser formateada de la misma manera, especialmente su traducción debe
-    empezar con `msgstr ""` y el texto raducido debe ir en la
+    empezar con `msgstr ""` y el texto traducido debe ir en la
     siguiente linea.
 
-    Cualquier caracter especial, como `%s` o `\n` debe ser copiado sin modificación alguna.
-    Tambien, de ser posible limite la longitud de la linea a 80 caracteres.
+    Cualquier carácter especial, como `%s` o `\n` debe ser copiado sin modificación alguna.
+    También, de ser posible, limite la longitud de la línea a 80 caracteres.
 
-    ¡Desde ya gracas por su rtabajo! Envienos por favor su fichero traducido a,
+    ¡Desde ya gracias por su trababajo! Envíenos por favor su fichero traducido a,
     nuestra [lista de correo](https://www.freelists.org/list/freedict).
 3.  Use una herramienta como [Poedit](https://poedit.net/download) que le ayudara en el proceso
     de traducción.
@@ -67,54 +67,54 @@ Está generador de la página web depende de lo siguiente:
 -   pybabel
 -   Pandoc
 -   Lektor; en Debian/Ubuntu use `apt install lektor` o `pip3 install lektor`
--   una version reciente de la API de FreeDict
+-   una versión reciente de la API de FreeDict
     -   Si tiene los derechos de acceso, eche una mirada a nuestra wiki
         <https://github.com/freedict/fd-dictionaries/wiki/FreeDict-API> como 
         construir la API más reciente.
     -   Para todos los demás: solo descargue
-        <https://freedict.org/freedict-database.json> y coloquelo en el directorio raiz
+        <https://freedict.org/freedict-database.json> y colquelo en el directorio raíz
         de su proyecto (el mismo en el que está el fichero README).
 
 ### Construir localmente
 
-Invoking lektor build does require a internet connection to fetch items for the
-"news" section. Setting the environment variable DEBUG (to any value) prevents
-this. Building with a network connection, a file databags/news.pickle will be
-created. Subsequent (DEBUG) runs will make use of this file, avoiding 403 by the
-GitHub API.
+Invocar lektor build requiere de una conección a internet para buscar artículos para 
+la sección de "noticias". Ajustar la variable de entorno DEBUG (a cualquier valor) impide
+esto. Al construir con una conexión a internet, se creara el fichero databags/news.pickle 
+Las ejecuciones posteriores (DEBUG) harán uso de este archivo, evitando UN 403 por la
+API GitHub.
 
-### Building On The Server
+### Construir en el servidor.
 
-Please see the head of `update_website` for document on the requirements, but in
-general, it's enough to execute this script.
+Vea por favor el encabezado `update_website` para documentarse sobre los requerimientos, pero en 
+general, es suficiente con ejecutar este script.
 
-Extending
+Ampliando
 ----------
 
 
-All sites are written in markdown. Please only edit the contents.lr files,
-because the contents+LANGCODE.lr files are auto-generated!
+Todos los sitios están escritos en markdown. ¡Por favor edite solamente los ficheros contents.lr,
+ya que los ficheros contents+LANGCODE.lr son auto generados!
 
-Also please do not use "------" for underlining headings, but instead "## TEXT",
-because the plugin won't be able to handle dashed headings correctly.
+También por favor no use "------" para subrayar encabezados, sino "## TEXT",
+porque el plugin no será capaz de manejar correctamente los encabezados subrayados.
 
-Quirks
+Particularidades
 ------
 
-Some of these below are a repitition of what has been written below, but
-sometimes it's better to have a separate section.
+Algunos de estos a continuación son una repetición de lo que se ha escrito más abajo, pero
+a veces es mejor tener una sección separada.
 
--   If you get errors from jinja telling you that `_` wasn't found, something
-    went wrong with the Lektor cache. Do a friendly `rm -rf ~/.cache/lektor` and
-    re-run.
--   Again, you need the FreeDict API files, namely the freedict-database.json in
-    the root of this directory. If you are just testing the design, feel free to
-    grab a copy from <https://freedict.org/freedict-database.json>
--   Please don't use dashed markdown headings:
+-   si tiene un error de jinja diciéndole que `_` no fue encontrado, algo 
+    salio mal con la cache de Lektor. Hafa un amistoso `rm -rf ~/.cache/lektor` y 
+    vuelva a correrlo.
+-   De nuevo, Ud necesita los ficheros de la API de FreeDict, a saber freedict-database.json en
+    el directorio raíz. Si solo está probando el diseño, siéntase libre de 
+    obtener una copia de <https://freedict.org/freedict-database.json>
+-   Por favor no use subrayados markdown en los encabezados:
 
         A Heading
         ---------
 
-    These look very similar to a block delimiter in Lektor. Even though the
-    lektor-i18n plugin tris not to interpret these, it might fail. Using `## A
-    Heading` is safer.
+    Estos se ven muy similares a un delimitador de bloques en Lektor. Aunque el
+    plugin lektor-i18n intenta no interpretar esto, podría fallar. Usar un
+    `## A Heading` es más seguro.
