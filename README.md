@@ -1,43 +1,43 @@
 FreeDict.org
 ===========
 
-This is the source code for the <https://freedict.org> web site.
-If you find any mistakes, typos, etc., please
-[tell us](https://freedict.org/community) or hand in a PR or patch.
+Este es el código fuente del sitio web <https://freedict.org>.
+Si encuentra errores por favor ...
+[díganos](https://freedict.org/community) o envíenos una petición o un parche.
 
-We are looking for translators. It is not too much work and the website doesn't
-change too often. So if you please a language other than listed on the bottom of
-<https://freedict.org>, please consider translating the page for us.
+Estamos buscando traductores. No es demasiado trabajo y el sitio web no
+cambia con mucha frecuencia. Si puede traducirlo a algún otro idioma diferente a los listados al final de 
+<https://freedict.org>, Considere por favor traducir la página para nosotros.
 
-Discussion takes place at our Wiki:
+Discusiones tienen lugar en nuestra Wiki:
 
 https://github.com/freedict/fd-dictionaries/wiki/Website-migration-to-Lektor
 
-Website Translations
+Traducciones de la página web
 -----------------
 
-We would appreciate your help for translating our website. It is not much work
-and updates are minor. There are two ways to approach this:
+Apreciaríamos su ayuda para traducir nuestra página web. No es mucho trabajo
+y las actualizaciones son menores. Hay dos maneras de abordar esto:
 
-1.  If  you are familiar with gettext, please hand in a PR. Add your language
-    both in [freedict-org.lektorproject](freedict-org.lektorproject) and
-    [configs/i18n.ini](configs/i18n.ini) and try to build using `lektor build`.
-    If you cannot proceed, feel free to send us an
-    [e-mail](https://www.freelists.org/list/freedict) and we'll sort
-    things out for you.
-2.  If you are not familiar with Gettext, please contact us on our
-    [mailing list](https://www.freelists.org/list/freedict) and we will add the
-    language for you. Afterwards, you will receive a ".po" file.
+1.  Si está familiarizado con Gettext,  ...por favor, entregue una petición. Añada su idioma
+    tanto en [freedict-org.lektorproject](freedict-org.lektorproject) como en
+    [configs/i18n.ini](configs/i18n.ini) e intente construir usando "Lektor build".
+    Si no puede proceder, siéntase libre de enviarnos un [E-mail]
+    (https://www.freelists.org/list/freedict) y arreglaremos
+    las cosas  para UD. 
+2.  Si no está familiarizado con Gettext, por favor contáctenos a nuestra 
+    [lista de correo](https://www.freelists.org/list/freedict) y agregaremos 
+    el idioma para UD. A continuación recibirá un fichero ".po".
 
-    Open the `.po`-file in a text editor. The first paragraph can be ignored.
-    The subsequent paragraphs are the individual messages to be translated. The
-    first line always starts with a hash `#`, please ignore this line and leave
-    it unchanged. The next line contains the `msgid` with the actual message in
-    quotes. This is the English text that serves as a basis for translation.
-    Below is a line with `msgstr` and empty quotes. Insert the translation
-    between the quotes.
+    Abra el fichero `.po` en un editor de texto. El primer párrafo puede ser ignorado.
+    Los párrafos siguientes son los textos que deben ser traducidos. La
+    primera linea siempre empieza con un "hash" `#`, por favor ignore está línea y
+    no la modifique. La siguiente linea tiene un `msgid` con el texto en
+    comillas. Este es el texto en Inglés que sirve de base para la traducción.
+    Debajo hay una línea con un `msgstr` y comillas vacías. Coloque la traducción 
+    entre las comillas.
 
-    If you see  a longer translation like this:
+    Si ve un texto más largo, como el siguiente:
 
     ````
     msgid ""
@@ -45,76 +45,76 @@ and updates are minor. There are two ways to approach this:
     "to extend over multiple lines."
     ```
 
-    Your translation should be formatted the same way, especially, your
-    translation should start with `msgstr ""` and the translation start on the
-    next line.
+    Su traducción debe ser formateada de la misma manera, especialmente su traducción debe
+    empezar con `msgstr ""` y el texto traducido debe ir en la
+    siguiente linea.
 
-    Any special characters, such as `%s` or `\n` need to be copied unchanged.
-    Also, if possible, please limit the length of a line to 80 characters.
+    Cualquier carácter especial, como `%s` o `\n` debe ser copiado sin modificación alguna.
+    También, de ser posible, limite la longitud de la línea a 80 caracteres.
 
-    Thanks already for your work! Please send the translated file back to us,
-    e.g. via our [mailing list](https://www.freelists.org/list/freedict).
-3.  Use a tool like [Poedit](https://poedit.net/download) that will aid in the
-    translation process.
+    ¡Desde ya gracias por su trababajo! Envíenos por favor su fichero traducido a,
+    nuestra [lista de correo](https://www.freelists.org/list/freedict).
+3.  Use una herramienta como [Poedit](https://poedit.net/download) que le ayudara en el proceso
+    de traducción.
 
-Building
+Construcción
 --------
 
-This website generator depends on the following:
+Está generador de la página web depende de lo siguiente:
 
 -   Python >= 3.4
 -   gettext utilities
 -   pybabel
 -   Pandoc
--   Lektor; on Debian/Ubuntu use `apt install lektor` or `pip3 install lektor`
--   a fresh version of the FreeDict API
-    -   if you happen to have the access rights, have a look at our wiki
-        <https://github.com/freedict/fd-dictionaries/wiki/FreeDict-API> how to
-        build the latest API and build it yourself.
-    -   For everybody else: just download
-        <https://freedict.org/freedict-database.json> and place it into the root
-        directory of this project (the same as this README lies in).
+-   Lektor; en Debian/Ubuntu use `apt install lektor` o `pip3 install lektor`
+-   una versión reciente de la API de FreeDict
+    -   Si tiene los derechos de acceso, eche una mirada a nuestra wiki
+        <https://github.com/freedict/fd-dictionaries/wiki/FreeDict-API> como 
+        construir la API más reciente.
+    -   Para todos los demás: solo descargue
+        <https://freedict.org/freedict-database.json> y colquelo en el directorio raíz
+        de su proyecto (el mismo en el que está el fichero README).
 
-### Building Locally
+### Construir localmente
 
-Invoking lektor build does require a internet connection to fetch items for the
-"news" section. Setting the environment variable DEBUG (to any value) prevents
-this. Building with a network connection, a file databags/news.pickle will be
-created. Subsequent (DEBUG) runs will make use of this file, avoiding 403 by the
-GitHub API.
+Invocar lektor build requiere de una conección a internet para buscar artículos para 
+la sección de "noticias". Ajustar la variable de entorno DEBUG (a cualquier valor) impide
+esto. Al construir con una conexión a internet, se creara el fichero databags/news.pickle 
+Las ejecuciones posteriores (DEBUG) harán uso de este archivo, evitando UN 403 por la
+API GitHub.
 
-### Building On The Server
+### Construir en el servidor.
 
-Please see the head of `update_website` for document on the requirements, but in
-general, it's enough to execute this script.
+Vea por favor el encabezado `update_website` para documentarse sobre los requerimientos, pero en 
+general, es suficiente con ejecutar este script.
 
-Extending
+Ampliando
 ----------
 
 
-All sites are written in markdown. Please only edit the contents.lr files,
-because the contents+LANGCODE.lr files are auto-generated!
+Todos los sitios están escritos en markdown. ¡Por favor edite solamente los ficheros contents.lr,
+ya que los ficheros contents+LANGCODE.lr son auto generados!
 
-Also please do not use "------" for underlining headings, but instead "## TEXT",
-because the plugin won't be able to handle dashed headings correctly.
+También por favor no use "------" para subrayar encabezados, sino "## TEXT",
+porque el plugin no será capaz de manejar correctamente los encabezados subrayados.
 
-Quirks
+Particularidades
 ------
 
-Some of these below are a repitition of what has been written below, but
-sometimes it's better to have a separate section.
+Algunos de estos a continuación son una repetición de lo que se ha escrito más abajo, pero
+a veces es mejor tener una sección separada.
 
--   If you get errors from jinja telling you that `_` wasn't found, something
-    went wrong with the Lektor cache. Do a friendly `rm -rf ~/.cache/lektor` and
-    re-run.
--   Again, you need the FreeDict API files, namely the freedict-database.json in
-    the root of this directory. If you are just testing the design, feel free to
-    grab a copy from <https://freedict.org/freedict-database.json>
--   Please don't use dashed markdown headings:
+-   si tiene un error de jinja diciéndole que `_` no fue encontrado, algo 
+    salio mal con la cache de Lektor. Hafa un amistoso `rm -rf ~/.cache/lektor` y 
+    vuelva a correrlo.
+-   De nuevo, Ud necesita los ficheros de la API de FreeDict, a saber freedict-database.json en
+    el directorio raíz. Si solo está probando el diseño, siéntase libre de 
+    obtener una copia de <https://freedict.org/freedict-database.json>
+-   Por favor no use subrayados markdown en los encabezados:
 
         A Heading
         ---------
 
-    These look very similar to a block delimiter in Lektor. Even though the
-    lektor-i18n plugin tris not to interpret these, it might fail. Using `## A
-    Heading` is safer.
+    Estos se ven muy similares a un delimitador de bloques en Lektor. Aunque el
+    plugin lektor-i18n intenta no interpretar esto, podría fallar. Usar un
+    `## A Heading` es más seguro.
